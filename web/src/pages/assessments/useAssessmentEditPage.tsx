@@ -51,11 +51,7 @@ export const useAssessmentEditPage = ({
         const assessmentSkillsAttributes = skills.map(
           (skill, index) => ({
             ...(skill.id !== undefined && {
-              id: skill.id,
-            }),
-
-            ...(skill.skill_id !== undefined && {
-              skill_id: skill.skill_id,
+              id: skill.skill_id || skill.id,
             }),
 
             skill_label: skill.skill_label,
@@ -124,7 +120,7 @@ export const useAssessmentEditPage = ({
           assessment.skills?.map((skill) => ({
             ...skill,
             id: skill.id,
-            skill_id: skill.skill_id,
+            skill_id: skill.id,
           })) ?? [],
       });
     } catch {

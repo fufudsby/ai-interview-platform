@@ -86,24 +86,16 @@ const renderEditHook = (id?: string) => {
   };
 };
 
+/**
+ * API response:
+ * skill_id = taxonomy skill ID
+ *
+ * Form:
+ * id = skill_id
+ */
 const existingSkill = {
   id: 1,
   skill_id: 10,
-  skill_label: "React",
-  is_custom: false,
-  expected_level: 4,
-  display_order: 0,
-  scope_include: "React development",
-  scope_exclude: "React Native",
-  l1_anchor: "Basic React",
-  l2_anchor: "Components",
-  l3_anchor: "Advanced React",
-  l4_anchor: "Architecture",
-  l5_anchor: "Leadership",
-};
-
-const expectedSkillPayload = {
-  id: 1,
   skill_label: "React",
   is_custom: false,
   expected_level: 4,
@@ -162,7 +154,7 @@ describe("useAssessmentEditPage", () => {
       skills: [
         {
           id: 1,
-          skill_id: 10,
+          skill_id: 1,
           skill_label: "React",
           is_custom: false,
           expected_level: 4,
@@ -228,8 +220,7 @@ describe("useAssessmentEditPage", () => {
       language: "en",
       skills: [
         {
-          id: 1,
-          skill_id: 10,
+          id: 10,
           skill_label: "React",
           is_custom: false,
           expected_level: 4,
@@ -269,8 +260,7 @@ describe("useAssessmentEditPage", () => {
       time_limit_min: 60,
       assessment_skills_attributes: [
         {
-          id: 1,
-          skill_id: 10,
+          id: 10,
           skill_label: "React",
           is_custom: false,
           expected_level: 4,
@@ -336,8 +326,7 @@ describe("useAssessmentEditPage", () => {
     act(() => {
       result.current.edit.setDeletedSkills([
         {
-          id: 1,
-          skill_id: 10,
+          id: 10,
           skill_label: "React",
           is_custom: false,
           expected_level: 4,
@@ -369,8 +358,7 @@ describe("useAssessmentEditPage", () => {
 
     expect(payload.assessment_skills_attributes).toEqual([
       {
-        id: 1,
-        skill_id: 10,
+        id: 10,
         skill_label: "React",
         is_custom: false,
         expected_level: 4,
